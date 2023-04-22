@@ -13,6 +13,9 @@
 		A3840BC629F2AD0C004B77D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3840BC429F2AD0C004B77D3 /* Main.storyboard */; };
 		A3840BC829F2AD14004B77D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3840BC729F2AD14004B77D3 /* Assets.xcassets */; };
 		A3840BCB29F2AD14004B77D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3840BC929F2AD14004B77D3 /* LaunchScreen.storyboard */; };
+		A3840BD429F2B1D9004B77D3 /* AuthorizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3840BD329F2B1D9004B77D3 /* AuthorizationView.swift */; };
+		A3840BD629F2B6A6004B77D3 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3840BD529F2B6A6004B77D3 /* AuthorizationViewController.swift */; };
+		A3840BD829F2C0A8004B77D3 /* AuthorizationViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3840BD729F2C0A8004B77D3 /* AuthorizationViewDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		A3840BC729F2AD14004B77D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A3840BCA29F2AD14004B77D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A3840BCC29F2AD14004B77D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A3840BD329F2B1D9004B77D3 /* AuthorizationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationView.swift; sourceTree = "<group>"; };
+		A3840BD529F2B6A6004B77D3 /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
+		A3840BD729F2C0A8004B77D3 /* AuthorizationViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +62,7 @@
 		A3840BBD29F2AD0C004B77D3 /* MobileApp */ = {
 			isa = PBXGroup;
 			children = (
+				A3840BD229F2B1B2004B77D3 /* AuthorizationView */,
 				A3840BBE29F2AD0C004B77D3 /* AppDelegate.swift */,
 				A3840BC029F2AD0C004B77D3 /* SceneDelegate.swift */,
 				A3840BC229F2AD0C004B77D3 /* ViewController.swift */,
@@ -65,6 +72,16 @@
 				A3840BCC29F2AD14004B77D3 /* Info.plist */,
 			);
 			path = MobileApp;
+			sourceTree = "<group>";
+		};
+		A3840BD229F2B1B2004B77D3 /* AuthorizationView */ = {
+			isa = PBXGroup;
+			children = (
+				A3840BD329F2B1D9004B77D3 /* AuthorizationView.swift */,
+				A3840BD529F2B6A6004B77D3 /* AuthorizationViewController.swift */,
+				A3840BD729F2C0A8004B77D3 /* AuthorizationViewDelegate.swift */,
+			);
+			path = AuthorizationView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,7 +156,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3840BC329F2AD0C004B77D3 /* ViewController.swift in Sources */,
+				A3840BD829F2C0A8004B77D3 /* AuthorizationViewDelegate.swift in Sources */,
 				A3840BBF29F2AD0C004B77D3 /* AppDelegate.swift in Sources */,
+				A3840BD429F2B1D9004B77D3 /* AuthorizationView.swift in Sources */,
+				A3840BD629F2B6A6004B77D3 /* AuthorizationViewController.swift in Sources */,
 				A3840BC129F2AD0C004B77D3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
