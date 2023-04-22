@@ -8,7 +8,6 @@
 import UIKit
 
 final class AuthorizationView: UIView {
-    
     weak var delegate: AuthorizationViewDelegate?
     
     private let textLabel = UILabel()

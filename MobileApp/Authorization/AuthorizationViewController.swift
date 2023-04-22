@@ -8,7 +8,6 @@
 import UIKit
 
 final class AuthorizationViewController: UIViewController, AuthorizationViewDelegate {
-    
     private var authorizationView: AuthorizationView? = nil
     
     override func viewDidLoad() {
@@ -30,5 +29,7 @@ final class AuthorizationViewController: UIViewController, AuthorizationViewDele
     }
     
     func login() {
+        let oauthViewController = OAuthViewController()
+        present(oauthViewController, animated: false)
     }
 }
