@@ -41,7 +41,7 @@ final class AuthorizationView: UIView {
     }
     
     private func configureLoginButton() {
-        loginButton.addTarget(self, action: #selector(loginTap), for: .touchUpInside)
+        loginButton.addTarget(self, action: #selector(didTapLogin), for: .touchUpInside)
         
         addSubview(loginButton)
         
@@ -53,8 +53,8 @@ final class AuthorizationView: UIView {
         ])
     }
     
-    @objc private func loginTap() {
-        delegate?.login()
+    @objc private func didTapLogin() {
+        delegate?.didTapLogin()
     }
 }
 

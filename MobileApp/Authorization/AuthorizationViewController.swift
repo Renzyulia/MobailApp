@@ -7,8 +7,10 @@
 
 import UIKit
 
-final class AuthorizationViewController: UIViewController, AuthorizationViewDelegate {
+final class AuthorizationViewController: UIViewController, AuthorizationViewDelegate, AuthorizationModelDelegate, OAuthViewControllerDelagate {
     private var authorizationView: AuthorizationView? = nil
+    private var authorizationModel: AuthorizationModel? = nil
+    private var oauthViewController: OAuthViewController? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,6 +18,10 @@ final class AuthorizationViewController: UIViewController, AuthorizationViewDele
         let authorizationView = AuthorizationView()
         self.authorizationView = authorizationView
         authorizationView.delegate = self
+        
+        let authorizationModel = AuthorizationModel()
+        self.authorizationModel = authorizationModel
+        authorizationModel.delegate = self
         
         view.addSubview(authorizationView)
         
@@ -28,8 +34,19 @@ final class AuthorizationViewController: UIViewController, AuthorizationViewDele
         ])
     }
     
-    func login() {
+    func didTapLogin() {
+        authorizationModel?.didTapLogin()
+    }
+    
+    func openOAuthView() {
         let oauthViewController = OAuthViewController()
-        present(oauthViewController, animated: false)
+        self.oauthViewController = oauthViewController
+        oauthViewController.delegate = self
+        
+        self.embed(oauthViewController)
+    }
+    
+    func didAuthorization() {
+        oauthViewController?.dismiss(animated: false)
     }
 }

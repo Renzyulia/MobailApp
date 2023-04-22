@@ -1,0 +1,17 @@
+//
+//  UIViewController+EmbedFunction.swift
+//  MobileApp
+//
+//  Created by Yulia Ignateva on 22.04.2023.
+//
+
+import UIKit
+
+extension UIViewController {
+    func embed(_ viewController: UIViewController) {
+        addChild(viewController)
+        view.addSubview(viewController.view)
+        viewController.view.frame = view.bounds
+        viewController.didMove(toParent: self)
+    }
+}

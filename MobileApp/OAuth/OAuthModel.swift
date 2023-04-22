@@ -26,7 +26,7 @@ final class OAuthModel {
                         let component = URLComponents(url: url, resolvingAgainstBaseURL: false)
                         if let fragment = component?.fragment {
                             let token = String(fragment.dropFirst(13))
-                            print(token)
+                            TokenStorage.shared.save(token: token)
                         }
                     }
                 } else {

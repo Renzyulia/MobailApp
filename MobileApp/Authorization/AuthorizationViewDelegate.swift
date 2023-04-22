@@ -8,5 +8,5 @@
 import UIKit
 
 protocol AuthorizationViewDelegate: AnyObject {
-    func login()
+    func didTapLogin()
 }

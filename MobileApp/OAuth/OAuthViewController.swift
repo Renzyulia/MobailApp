@@ -9,6 +9,8 @@ import UIKit
 import WebKit
 
 final class OAuthViewController: UIViewController, OAuthModelDelegate, WKNavigationDelegate {
+    weak var delegate: OAuthViewControllerDelagate?
+    
     private let webView = WKWebView()
     private var oAuthModel: OAuthModel? = nil
     
@@ -44,5 +46,9 @@ final class OAuthViewController: UIViewController, OAuthModelDelegate, WKNavigat
         } else {
             print("error")
         }
+    }
+    
+    func dismiss() {
+        delegate?.didAutorization()
     }
 }
