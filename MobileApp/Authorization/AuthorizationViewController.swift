@@ -50,9 +50,7 @@ final class AuthorizationViewController: UIViewController, AuthorizationViewDele
     
     func userDidAuthorizeSuccessfully() {
         oauthViewController?.remove()
-        print("removeOAuth")
         delegate?.userDidAuthorizeSuccessfully()
-        // сказать рутовому контроллеру, что авторизация выполнена
     }
     
     func didAuthorizeError() {

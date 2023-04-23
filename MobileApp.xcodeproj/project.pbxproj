@@ -21,13 +21,18 @@
 		A39612E329F44CEC0073A3F6 /* OAuthModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39612E229F44CEC0073A3F6 /* OAuthModelDelegate.swift */; };
 		A39612E629F45BF60073A3F6 /* KeyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39612E529F45BF60073A3F6 /* KeyChain.swift */; };
 		A39612E829F45D5E0073A3F6 /* TokenStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39612E729F45D5E0073A3F6 /* TokenStorage.swift */; };
-		A39612EB29F45FFF0073A3F6 /* UIViewController+EmbedFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39612EA29F45FFF0073A3F6 /* UIViewController+EmbedFunction.swift */; };
+		A39612EB29F45FFF0073A3F6 /* UIViewController+EmbedAndRemoveFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39612EA29F45FFF0073A3F6 /* UIViewController+EmbedAndRemoveFunction.swift */; };
 		A39612ED29F4601A0073A3F6 /* AuthorizationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39612EC29F4601A0073A3F6 /* AuthorizationModel.swift */; };
 		A39612EF29F4604E0073A3F6 /* AuthorizationModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39612EE29F4604E0073A3F6 /* AuthorizationModelDelegate.swift */; };
 		A39612F129F46BE20073A3F6 /* OAuthViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39612F029F46BE20073A3F6 /* OAuthViewControllerDelegate.swift */; };
 		A3B71E0C29F51C7F008ED556 /* RootModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B71E0B29F51C7F008ED556 /* RootModel.swift */; };
 		A3B71E0E29F51D40008ED556 /* RootModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B71E0D29F51D40008ED556 /* RootModelDelegate.swift */; };
 		A3B71E1029F52010008ED556 /* AuthorizationViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B71E0F29F52010008ED556 /* AuthorizationViewControllerDelegate.swift */; };
+		A3B71E1529F55307008ED556 /* PhotoGalleryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B71E1429F55307008ED556 /* PhotoGalleryModel.swift */; };
+		A3B71E1729F55C55008ED556 /* PhotoGalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B71E1629F55C55008ED556 /* PhotoGalleryViewController.swift */; };
+		A3B71E1929F56269008ED556 /* DataSourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B71E1829F56269008ED556 /* DataSourse.swift */; };
+		A3B71E3B29F59D54008ED556 /* PhotoGalleryModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B71E3A29F59D54008ED556 /* PhotoGalleryModelDelegate.swift */; };
+		A3B71E3D29F59ECE008ED556 /* PhotoGalleryViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B71E3C29F59ECE008ED556 /* PhotoGalleryViewControllerDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,13 +52,18 @@
 		A39612E229F44CEC0073A3F6 /* OAuthModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthModelDelegate.swift; sourceTree = "<group>"; };
 		A39612E529F45BF60073A3F6 /* KeyChain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChain.swift; sourceTree = "<group>"; };
 		A39612E729F45D5E0073A3F6 /* TokenStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenStorage.swift; sourceTree = "<group>"; };
-		A39612EA29F45FFF0073A3F6 /* UIViewController+EmbedFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+EmbedFunction.swift"; sourceTree = "<group>"; };
+		A39612EA29F45FFF0073A3F6 /* UIViewController+EmbedAndRemoveFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+EmbedAndRemoveFunction.swift"; sourceTree = "<group>"; };
 		A39612EC29F4601A0073A3F6 /* AuthorizationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationModel.swift; sourceTree = "<group>"; };
 		A39612EE29F4604E0073A3F6 /* AuthorizationModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationModelDelegate.swift; sourceTree = "<group>"; };
 		A39612F029F46BE20073A3F6 /* OAuthViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthViewControllerDelegate.swift; sourceTree = "<group>"; };
 		A3B71E0B29F51C7F008ED556 /* RootModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootModel.swift; sourceTree = "<group>"; };
 		A3B71E0D29F51D40008ED556 /* RootModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootModelDelegate.swift; sourceTree = "<group>"; };
 		A3B71E0F29F52010008ED556 /* AuthorizationViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewControllerDelegate.swift; sourceTree = "<group>"; };
+		A3B71E1429F55307008ED556 /* PhotoGalleryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGalleryModel.swift; sourceTree = "<group>"; };
+		A3B71E1629F55C55008ED556 /* PhotoGalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGalleryViewController.swift; sourceTree = "<group>"; };
+		A3B71E1829F56269008ED556 /* DataSourse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourse.swift; sourceTree = "<group>"; };
+		A3B71E3A29F59D54008ED556 /* PhotoGalleryModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGalleryModelDelegate.swift; sourceTree = "<group>"; };
+		A3B71E3C29F59ECE008ED556 /* PhotoGalleryViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGalleryViewControllerDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +100,7 @@
 				A39612E429F45BCF0073A3F6 /* KeyChain */,
 				A3840BD229F2B1B2004B77D3 /* Authorization */,
 				A39612DD29F44A070073A3F6 /* OAuth */,
+				A3B71E1329F5529C008ED556 /* PhotoGallery */,
 				A3840BBE29F2AD0C004B77D3 /* AppDelegate.swift */,
 				A3840BC029F2AD0C004B77D3 /* SceneDelegate.swift */,
 				A3840BC229F2AD0C004B77D3 /* ViewController.swift */,
@@ -106,12 +117,10 @@
 		A3840BD229F2B1B2004B77D3 /* Authorization */ = {
 			isa = PBXGroup;
 			children = (
+				A3B71E1129F54BF4008ED556 /* Delegates */,
 				A3840BD329F2B1D9004B77D3 /* AuthorizationView.swift */,
 				A3840BD529F2B6A6004B77D3 /* AuthorizationViewController.swift */,
 				A39612EC29F4601A0073A3F6 /* AuthorizationModel.swift */,
-				A3840BD729F2C0A8004B77D3 /* AuthorizationViewDelegate.swift */,
-				A39612EE29F4604E0073A3F6 /* AuthorizationModelDelegate.swift */,
-				A3B71E0F29F52010008ED556 /* AuthorizationViewControllerDelegate.swift */,
 			);
 			path = Authorization;
 			sourceTree = "<group>";
@@ -119,10 +128,9 @@
 		A39612DD29F44A070073A3F6 /* OAuth */ = {
 			isa = PBXGroup;
 			children = (
+				A3B71E1229F54C21008ED556 /* Delegates */,
 				A39612DE29F44A560073A3F6 /* OAuthViewController.swift */,
 				A39612E029F44B2D0073A3F6 /* OAuthModel.swift */,
-				A39612E229F44CEC0073A3F6 /* OAuthModelDelegate.swift */,
-				A39612F029F46BE20073A3F6 /* OAuthViewControllerDelegate.swift */,
 			);
 			path = OAuth;
 			sourceTree = "<group>";
@@ -139,9 +147,40 @@
 		A39612E929F45FDC0073A3F6 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				A39612EA29F45FFF0073A3F6 /* UIViewController+EmbedFunction.swift */,
+				A39612EA29F45FFF0073A3F6 /* UIViewController+EmbedAndRemoveFunction.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		A3B71E1129F54BF4008ED556 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				A3B71E0F29F52010008ED556 /* AuthorizationViewControllerDelegate.swift */,
+				A39612EE29F4604E0073A3F6 /* AuthorizationModelDelegate.swift */,
+				A3840BD729F2C0A8004B77D3 /* AuthorizationViewDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		A3B71E1229F54C21008ED556 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				A39612F029F46BE20073A3F6 /* OAuthViewControllerDelegate.swift */,
+				A39612E229F44CEC0073A3F6 /* OAuthModelDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		A3B71E1329F5529C008ED556 /* PhotoGallery */ = {
+			isa = PBXGroup;
+			children = (
+				A3B71E1429F55307008ED556 /* PhotoGalleryModel.swift */,
+				A3B71E1629F55C55008ED556 /* PhotoGalleryViewController.swift */,
+				A3B71E1829F56269008ED556 /* DataSourse.swift */,
+				A3B71E3A29F59D54008ED556 /* PhotoGalleryModelDelegate.swift */,
+				A3B71E3C29F59ECE008ED556 /* PhotoGalleryViewControllerDelegate.swift */,
+			);
+			path = PhotoGallery;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,15 +255,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				A39612DF29F44A560073A3F6 /* OAuthViewController.swift in Sources */,
+				A3B71E1929F56269008ED556 /* DataSourse.swift in Sources */,
 				A39612E829F45D5E0073A3F6 /* TokenStorage.swift in Sources */,
+				A3B71E1529F55307008ED556 /* PhotoGalleryModel.swift in Sources */,
 				A39612ED29F4601A0073A3F6 /* AuthorizationModel.swift in Sources */,
+				A3B71E1729F55C55008ED556 /* PhotoGalleryViewController.swift in Sources */,
+				A3B71E3D29F59ECE008ED556 /* PhotoGalleryViewControllerDelegate.swift in Sources */,
+				A3B71E3B29F59D54008ED556 /* PhotoGalleryModelDelegate.swift in Sources */,
 				A39612F129F46BE20073A3F6 /* OAuthViewControllerDelegate.swift in Sources */,
 				A3840BC329F2AD0C004B77D3 /* ViewController.swift in Sources */,
 				A39612E329F44CEC0073A3F6 /* OAuthModelDelegate.swift in Sources */,
 				A3840BD829F2C0A8004B77D3 /* AuthorizationViewDelegate.swift in Sources */,
 				A39612EF29F4604E0073A3F6 /* AuthorizationModelDelegate.swift in Sources */,
 				A3840BBF29F2AD0C004B77D3 /* AppDelegate.swift in Sources */,
-				A39612EB29F45FFF0073A3F6 /* UIViewController+EmbedFunction.swift in Sources */,
+				A39612EB29F45FFF0073A3F6 /* UIViewController+EmbedAndRemoveFunction.swift in Sources */,
 				A3840BD429F2B1D9004B77D3 /* AuthorizationView.swift in Sources */,
 				A3B71E0E29F51D40008ED556 /* RootModelDelegate.swift in Sources */,
 				A39612E129F44B2D0073A3F6 /* OAuthModel.swift in Sources */,

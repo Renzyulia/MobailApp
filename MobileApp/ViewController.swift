@@ -7,9 +7,10 @@
 
 import UIKit
 
-class ViewController: UIViewController, RootModelDelegate, AuthorizationViewControllerDelegate {
+class ViewController: UIViewController, RootModelDelegate, AuthorizationViewControllerDelegate, PhotoGalleryViewControllerDelegate {
     private var rootModel: RootModel? = nil
     private var authorizationViewController: AuthorizationViewController? = nil
+    private var photoGalleryViewController: PhotoGalleryViewController? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +21,6 @@ class ViewController: UIViewController, RootModelDelegate, AuthorizationViewCont
         rootModel.delegate = self
         
         rootModel.viewDidLoad()
-        print("didLoad")
     }
     
     func showAuthorization() {
@@ -32,16 +32,23 @@ class ViewController: UIViewController, RootModelDelegate, AuthorizationViewCont
     }
     
     func showUserProfile(token: String) {
-//        TokenStorage.shared.delete(token: token)
-        print("token")
-        //создаем навигейшн контроллер
-        //создаем контроллер экрана профиля и добавляем его в показ
+        let photoGalleryViewController = PhotoGalleryViewController(token: token)
+        self.photoGalleryViewController = photoGalleryViewController
+        photoGalleryViewController.delegate = self
+        
+        let navigationPhotoGalleryViewController = UINavigationController(rootViewController: photoGalleryViewController)
+        
+        embed(navigationPhotoGalleryViewController)
     }
     
     func userDidAuthorizeSuccessfully() {
         authorizationViewController?.remove()
-        print("removeAuthorization")
         rootModel?.userDidAuthorizeSuccessfully()
+    }
+    
+    func didTapExit() {
+        photoGalleryViewController?.remove()
+        rootModel?.didTapExit()
     }
 }
 
