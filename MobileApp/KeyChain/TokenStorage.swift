@@ -20,7 +20,7 @@ final class TokenStorage {
         keyChain.save(token: token, key: keyForKeyChain, service: serviceForKeyChain)
     }
     
-    func getLogin() -> String? {
+    func getToken() -> String? {
         return keyChain.get(key: keyForKeyChain, service: serviceForKeyChain)
     }
     

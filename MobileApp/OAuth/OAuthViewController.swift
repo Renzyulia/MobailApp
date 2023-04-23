@@ -48,7 +48,10 @@ final class OAuthViewController: UIViewController, OAuthModelDelegate, WKNavigat
         }
     }
     
-    func dismiss() {
-        delegate?.didAutorization()
+    func dismissWith(result: Result) {
+        switch result {
+        case .success: delegate?.userDidAuthorizeSuccessfully() 
+        case .error: delegate?.didAuthorizeError()
+        }
     }
 }

@@ -27,12 +27,18 @@ final class OAuthModel {
                         if let fragment = component?.fragment {
                             let token = String(fragment.dropFirst(13))
                             TokenStorage.shared.save(token: token)
+                            delegate?.dismissWith(result: .success)
                         }
                     }
                 } else {
-                    print("Error")
+                    delegate?.dismissWith(result: .error)
                 }
             }
         }
     }
+}
+
+enum Result {
+    case success
+    case error
 }

@@ -25,6 +25,9 @@
 		A39612ED29F4601A0073A3F6 /* AuthorizationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39612EC29F4601A0073A3F6 /* AuthorizationModel.swift */; };
 		A39612EF29F4604E0073A3F6 /* AuthorizationModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39612EE29F4604E0073A3F6 /* AuthorizationModelDelegate.swift */; };
 		A39612F129F46BE20073A3F6 /* OAuthViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39612F029F46BE20073A3F6 /* OAuthViewControllerDelegate.swift */; };
+		A3B71E0C29F51C7F008ED556 /* RootModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B71E0B29F51C7F008ED556 /* RootModel.swift */; };
+		A3B71E0E29F51D40008ED556 /* RootModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B71E0D29F51D40008ED556 /* RootModelDelegate.swift */; };
+		A3B71E1029F52010008ED556 /* AuthorizationViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B71E0F29F52010008ED556 /* AuthorizationViewControllerDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +51,9 @@
 		A39612EC29F4601A0073A3F6 /* AuthorizationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationModel.swift; sourceTree = "<group>"; };
 		A39612EE29F4604E0073A3F6 /* AuthorizationModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationModelDelegate.swift; sourceTree = "<group>"; };
 		A39612F029F46BE20073A3F6 /* OAuthViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthViewControllerDelegate.swift; sourceTree = "<group>"; };
+		A3B71E0B29F51C7F008ED556 /* RootModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootModel.swift; sourceTree = "<group>"; };
+		A3B71E0D29F51D40008ED556 /* RootModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootModelDelegate.swift; sourceTree = "<group>"; };
+		A3B71E0F29F52010008ED556 /* AuthorizationViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewControllerDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +93,8 @@
 				A3840BBE29F2AD0C004B77D3 /* AppDelegate.swift */,
 				A3840BC029F2AD0C004B77D3 /* SceneDelegate.swift */,
 				A3840BC229F2AD0C004B77D3 /* ViewController.swift */,
+				A3B71E0B29F51C7F008ED556 /* RootModel.swift */,
+				A3B71E0D29F51D40008ED556 /* RootModelDelegate.swift */,
 				A3840BC429F2AD0C004B77D3 /* Main.storyboard */,
 				A3840BC729F2AD14004B77D3 /* Assets.xcassets */,
 				A3840BC929F2AD14004B77D3 /* LaunchScreen.storyboard */,
@@ -103,6 +111,7 @@
 				A39612EC29F4601A0073A3F6 /* AuthorizationModel.swift */,
 				A3840BD729F2C0A8004B77D3 /* AuthorizationViewDelegate.swift */,
 				A39612EE29F4604E0073A3F6 /* AuthorizationModelDelegate.swift */,
+				A3B71E0F29F52010008ED556 /* AuthorizationViewControllerDelegate.swift */,
 			);
 			path = Authorization;
 			sourceTree = "<group>";
@@ -217,10 +226,13 @@
 				A3840BBF29F2AD0C004B77D3 /* AppDelegate.swift in Sources */,
 				A39612EB29F45FFF0073A3F6 /* UIViewController+EmbedFunction.swift in Sources */,
 				A3840BD429F2B1D9004B77D3 /* AuthorizationView.swift in Sources */,
+				A3B71E0E29F51D40008ED556 /* RootModelDelegate.swift in Sources */,
 				A39612E129F44B2D0073A3F6 /* OAuthModel.swift in Sources */,
 				A39612E629F45BF60073A3F6 /* KeyChain.swift in Sources */,
 				A3840BD629F2B6A6004B77D3 /* AuthorizationViewController.swift in Sources */,
 				A3840BC129F2AD0C004B77D3 /* SceneDelegate.swift in Sources */,
+				A3B71E0C29F51C7F008ED556 /* RootModel.swift in Sources */,
+				A3B71E1029F52010008ED556 /* AuthorizationViewControllerDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

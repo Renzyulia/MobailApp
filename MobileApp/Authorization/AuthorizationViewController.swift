@@ -8,6 +8,8 @@
 import UIKit
 
 final class AuthorizationViewController: UIViewController, AuthorizationViewDelegate, AuthorizationModelDelegate, OAuthViewControllerDelagate {
+    weak var delegate: AuthorizationViewControllerDelegate?
+    
     private var authorizationView: AuthorizationView? = nil
     private var authorizationModel: AuthorizationModel? = nil
     private var oauthViewController: OAuthViewController? = nil
@@ -46,7 +48,15 @@ final class AuthorizationViewController: UIViewController, AuthorizationViewDele
         self.embed(oauthViewController)
     }
     
-    func didAuthorization() {
-        oauthViewController?.dismiss(animated: false)
+    func userDidAuthorizeSuccessfully() {
+        oauthViewController?.remove()
+        print("removeOAuth")
+        delegate?.userDidAuthorizeSuccessfully()
+        // сказать рутовому контроллеру, что авторизация выполнена
+    }
+    
+    func didAuthorizeError() {
+        oauthViewController?.remove()
+        //показать алерт с ошибкой
     }
 }

@@ -14,4 +14,10 @@ extension UIViewController {
         viewController.view.frame = view.bounds
         viewController.didMove(toParent: self)
     }
+    
+    func remove() {
+        willMove(toParent: nil)
+        view.removeFromSuperview()
+        removeFromParent()
+    }
 }
