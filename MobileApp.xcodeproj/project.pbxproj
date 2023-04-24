@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A32A938129F6769C0073C332 /* UIImageView+loadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32A938029F6769C0073C332 /* UIImageView+loadImage.swift */; };
+		A32A938429F676CB0073C332 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32A938329F676CB0073C332 /* ImageManager.swift */; };
+		A32A938629F6787A0073C332 /* PhotoGalleryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32A938529F6787A0073C332 /* PhotoGalleryCell.swift */; };
 		A3840BBF29F2AD0C004B77D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3840BBE29F2AD0C004B77D3 /* AppDelegate.swift */; };
 		A3840BC129F2AD0C004B77D3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3840BC029F2AD0C004B77D3 /* SceneDelegate.swift */; };
 		A3840BC329F2AD0C004B77D3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3840BC229F2AD0C004B77D3 /* ViewController.swift */; };
@@ -36,6 +39,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A32A938029F6769C0073C332 /* UIImageView+loadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+loadImage.swift"; sourceTree = "<group>"; };
+		A32A938329F676CB0073C332 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
+		A32A938529F6787A0073C332 /* PhotoGalleryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGalleryCell.swift; sourceTree = "<group>"; };
 		A3840BBB29F2AD0C004B77D3 /* MobileApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3840BBE29F2AD0C004B77D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3840BC029F2AD0C004B77D3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +83,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A32A938229F676B00073C332 /* ImageManager */ = {
+			isa = PBXGroup;
+			children = (
+				A32A938329F676CB0073C332 /* ImageManager.swift */,
+			);
+			path = ImageManager;
+			sourceTree = "<group>";
+		};
 		A3840BB229F2AD0B004B77D3 = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +110,7 @@
 		A3840BBD29F2AD0C004B77D3 /* MobileApp */ = {
 			isa = PBXGroup;
 			children = (
+				A32A938229F676B00073C332 /* ImageManager */,
 				A39612E929F45FDC0073A3F6 /* Extension */,
 				A39612E429F45BCF0073A3F6 /* KeyChain */,
 				A3840BD229F2B1B2004B77D3 /* Authorization */,
@@ -148,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				A39612EA29F45FFF0073A3F6 /* UIViewController+EmbedAndRemoveFunction.swift */,
+				A32A938029F6769C0073C332 /* UIImageView+loadImage.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -179,6 +195,7 @@
 				A3B71E1829F56269008ED556 /* DataSourse.swift */,
 				A3B71E3A29F59D54008ED556 /* PhotoGalleryModelDelegate.swift */,
 				A3B71E3C29F59ECE008ED556 /* PhotoGalleryViewControllerDelegate.swift */,
+				A32A938529F6787A0073C332 /* PhotoGalleryCell.swift */,
 			);
 			path = PhotoGallery;
 			sourceTree = "<group>";
@@ -262,6 +279,7 @@
 				A3B71E1729F55C55008ED556 /* PhotoGalleryViewController.swift in Sources */,
 				A3B71E3D29F59ECE008ED556 /* PhotoGalleryViewControllerDelegate.swift in Sources */,
 				A3B71E3B29F59D54008ED556 /* PhotoGalleryModelDelegate.swift in Sources */,
+				A32A938129F6769C0073C332 /* UIImageView+loadImage.swift in Sources */,
 				A39612F129F46BE20073A3F6 /* OAuthViewControllerDelegate.swift in Sources */,
 				A3840BC329F2AD0C004B77D3 /* ViewController.swift in Sources */,
 				A39612E329F44CEC0073A3F6 /* OAuthModelDelegate.swift in Sources */,
@@ -272,8 +290,10 @@
 				A3840BD429F2B1D9004B77D3 /* AuthorizationView.swift in Sources */,
 				A3B71E0E29F51D40008ED556 /* RootModelDelegate.swift in Sources */,
 				A39612E129F44B2D0073A3F6 /* OAuthModel.swift in Sources */,
+				A32A938629F6787A0073C332 /* PhotoGalleryCell.swift in Sources */,
 				A39612E629F45BF60073A3F6 /* KeyChain.swift in Sources */,
 				A3840BD629F2B6A6004B77D3 /* AuthorizationViewController.swift in Sources */,
+				A32A938429F676CB0073C332 /* ImageManager.swift in Sources */,
 				A3840BC129F2AD0C004B77D3 /* SceneDelegate.swift in Sources */,
 				A3B71E0C29F51C7F008ED556 /* RootModel.swift in Sources */,
 				A3B71E1029F52010008ED556 /* AuthorizationViewControllerDelegate.swift in Sources */,
