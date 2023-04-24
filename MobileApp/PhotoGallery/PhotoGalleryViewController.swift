@@ -33,8 +33,10 @@ final class PhotoGalleryViewController: UIViewController, UICollectionViewDelega
         
         configureNavigationBar()
         
-        let dataSource = DataSource()
+        let dataSource = DataSource(token: token)
         self.dataSource = dataSource
+        
+        dataSource.getData()
         
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
