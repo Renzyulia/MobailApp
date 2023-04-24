@@ -32,15 +32,16 @@ final class PhotoGalleryViewController: UIViewController, UICollectionViewDelega
         photoGalleryModel.delegate = self
         
         configureNavigationBar()
-        
-        let dataSource = DataSource(token: token)
+
+        photoGalleryModel.viewDidLoad(width: Int(view.bounds.width))
+    }
+    
+    func showPhotoGalleryView() {
+        let dataSource = DataSource(photoGalleryModel: photoGalleryModel!)
         self.dataSource = dataSource
-        
-        dataSource.getData()
         
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
-        
         layout.itemSize = CGSize(width: view.bounds.width / 2 - 1, height: view.bounds.width / 2 - 1)
         layout.minimumInteritemSpacing = 1
         layout.minimumLineSpacing = 1
@@ -48,7 +49,7 @@ final class PhotoGalleryViewController: UIViewController, UICollectionViewDelega
         collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
         collectionView.delegate = self
         collectionView.dataSource = dataSource
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: dataSource.reuseIdentifier)
+        collectionView.register(PhotoGalleryCell.self, forCellWithReuseIdentifier: dataSource.reuseIdentifier)
         
         view.addSubview(collectionView)
     }

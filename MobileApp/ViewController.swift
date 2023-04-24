@@ -11,6 +11,7 @@ class ViewController: UIViewController, RootModelDelegate, AuthorizationViewCont
     private var rootModel: RootModel? = nil
     private var authorizationViewController: AuthorizationViewController? = nil
     private var photoGalleryViewController: PhotoGalleryViewController? = nil
+    private var navigationPhotoGalleryViewController: UINavigationController? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +38,7 @@ class ViewController: UIViewController, RootModelDelegate, AuthorizationViewCont
         photoGalleryViewController.delegate = self
         
         let navigationPhotoGalleryViewController = UINavigationController(rootViewController: photoGalleryViewController)
+        self.navigationPhotoGalleryViewController = navigationPhotoGalleryViewController
         
         embed(navigationPhotoGalleryViewController)
     }
@@ -47,7 +49,7 @@ class ViewController: UIViewController, RootModelDelegate, AuthorizationViewCont
     }
     
     func didTapExit() {
-        photoGalleryViewController?.remove()
+        navigationPhotoGalleryViewController?.remove()
         rootModel?.didTapExit()
     }
 }

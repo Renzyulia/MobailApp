@@ -8,30 +8,22 @@
 import UIKit
 
 final class DataSource: NSObject, UICollectionViewDataSource {
-    let token: String
-    var count: Int = 0
-    
+    let photoGalleryModel: PhotoGalleryModel
     let reuseIdentifier = "Cell"
-    private let items = ["1","2","3","4"] //просим у модели все загруженные фотографии
     
-    init(token: String) {
-        self.token = token
+    init(photoGalleryModel: PhotoGalleryModel) {
+        self.photoGalleryModel = photoGalleryModel
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return items.count
+        return photoGalleryModel.countPhotos
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! PhotoGalleryCell
         
-        cell.backgroundColor = .green
-        
-        let image = UIImageView()
-        cell.contentView.addSubview(image)
+        cell.configurePhotoGalleryCell(url: photoGalleryModel.url[indexPath.item])
         
         return cell
     }
-    
-    
 }

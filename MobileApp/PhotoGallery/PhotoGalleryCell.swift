@@ -8,14 +8,29 @@
 import UIKit
 
 final class PhotoGalleryCell: UICollectionViewCell {
-    let url: URL
+    private let imageView = UIImageView()
     
-    init(url: URL) {
-        self.url = url
-        super.init(frame: .zero)
+    override init(frame: CGRect) {
+        super.init(frame: frame)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func configurePhotoGalleryCell(url: URL) {
+        imageView.loadImage(with: url)
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        
+        contentView.addSubview(imageView)
+        
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            imageView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            imageView.leftAnchor.constraint(equalTo: contentView.leftAnchor),
+            imageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            imageView.rightAnchor.constraint(equalTo: contentView.rightAnchor)
+        ])
     }
 }

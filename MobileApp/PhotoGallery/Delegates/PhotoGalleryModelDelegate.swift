@@ -8,5 +8,6 @@
 import UIKit
 
 protocol PhotoGalleryModelDelegate: AnyObject {
+    func showPhotoGalleryView()
     func dismiss() 
 }

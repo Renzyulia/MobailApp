@@ -91,6 +91,15 @@
 			path = ImageManager;
 			sourceTree = "<group>";
 		};
+		A3334D1B29F6F557003F3035 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				A3B71E3C29F59ECE008ED556 /* PhotoGalleryViewControllerDelegate.swift */,
+				A3B71E3A29F59D54008ED556 /* PhotoGalleryModelDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
 		A3840BB229F2AD0B004B77D3 = {
 			isa = PBXGroup;
 			children = (
@@ -190,11 +199,10 @@
 		A3B71E1329F5529C008ED556 /* PhotoGallery */ = {
 			isa = PBXGroup;
 			children = (
-				A3B71E1429F55307008ED556 /* PhotoGalleryModel.swift */,
+				A3334D1B29F6F557003F3035 /* Delegates */,
 				A3B71E1629F55C55008ED556 /* PhotoGalleryViewController.swift */,
+				A3B71E1429F55307008ED556 /* PhotoGalleryModel.swift */,
 				A3B71E1829F56269008ED556 /* DataSourse.swift */,
-				A3B71E3A29F59D54008ED556 /* PhotoGalleryModelDelegate.swift */,
-				A3B71E3C29F59ECE008ED556 /* PhotoGalleryViewControllerDelegate.swift */,
 				A32A938529F6787A0073C332 /* PhotoGalleryCell.swift */,
 			);
 			path = PhotoGallery;
