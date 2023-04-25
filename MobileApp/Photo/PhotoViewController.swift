@@ -44,7 +44,7 @@ final class PhotoViewController: UIViewController, UICollectionViewDelegate, Pho
         configurePhotoView(url: url)
     }
     
-    private func configureNavigationBar(date: Int) {
+    private func configureNavigationBar(date: String) {
         navigationItem.title = "\(date)"
         
         let exitButton = UIBarButtonItem(image: UIImage(named: "SaveIcon"), style: .plain, target: self, action: #selector(didTapExit))

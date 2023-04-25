@@ -44,6 +44,7 @@
 		A3F746E529F7DDDF00732286 /* PhotoModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F746E429F7DDDF00732286 /* PhotoModelDelegate.swift */; };
 		A3F746E729F7E17F00732286 /* PhotoViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F746E629F7E17F00732286 /* PhotoViewControllerDelegate.swift */; };
 		A3F746F029F8093200732286 /* ResponseStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F746EF29F8093200732286 /* ResponseStructure.swift */; };
+		A3F746F629F84E4600732286 /* Date+transformFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F746F529F84E4600732286 /* Date+transformFunction.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +87,7 @@
 		A3F746E429F7DDDF00732286 /* PhotoModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoModelDelegate.swift; sourceTree = "<group>"; };
 		A3F746E629F7E17F00732286 /* PhotoViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewControllerDelegate.swift; sourceTree = "<group>"; };
 		A3F746EF29F8093200732286 /* ResponseStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseStructure.swift; sourceTree = "<group>"; };
+		A3F746F529F84E4600732286 /* Date+transformFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+transformFunction.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +190,7 @@
 			children = (
 				A39612EA29F45FFF0073A3F6 /* UIViewController+EmbedAndRemoveFunction.swift */,
 				A32A938029F6769C0073C332 /* UIImageView+loadImage.swift */,
+				A3F746F529F84E4600732286 /* Date+transformFunction.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 				A3B71E1929F56269008ED556 /* DataSourse.swift in Sources */,
 				A39612E829F45D5E0073A3F6 /* TokenStorage.swift in Sources */,
 				A3B71E1529F55307008ED556 /* PhotoGalleryModel.swift in Sources */,
+				A3F746F629F84E4600732286 /* Date+transformFunction.swift in Sources */,
 				A39612ED29F4601A0073A3F6 /* AuthorizationModel.swift in Sources */,
 				A3B71E1729F55C55008ED556 /* PhotoGalleryViewController.swift in Sources */,
 				A3B71E3D29F59ECE008ED556 /* PhotoGalleryViewControllerDelegate.swift in Sources */,

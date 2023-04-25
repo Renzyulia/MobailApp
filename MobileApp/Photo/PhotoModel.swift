@@ -10,7 +10,7 @@ import UIKit
 final class PhotoModel {
     weak var delegate: PhotoModelDelegate?
     var countPhotos: Int!
-    var datePhoto: Int!
+    var datePhoto: String!
     var urlPhoto: URL!
     
     private let token: String
@@ -35,7 +35,9 @@ final class PhotoModel {
                 DispatchQueue.main.async {
                     self!.countPhotos = responseModel.response.count
                     
-                    self!.datePhoto = responseModel.response.items[item].date
+                    let date = NSDate(timeIntervalSince1970: TimeInterval(responseModel.response.items[item].date)) as Date
+                    
+                    self!.datePhoto = date.transform()
                     
                     let index = self!.findTheLargestSize(responseModel.response.items[item].sizes)
                     self!.urlPhoto = responseModel.response.items[item].sizes[index].url
