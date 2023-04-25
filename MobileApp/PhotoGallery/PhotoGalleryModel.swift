@@ -22,6 +22,10 @@ final class PhotoGalleryModel {
         getData(forViewWithWidth: width)
     }
     
+    func didSelectItem(_ item: Int) {
+        delegate?.showPhoto(item: item)
+    }
+    
     func didTapExit() {
         TokenStorage.shared.delete(token: token)
         delegate?.dismiss()
@@ -68,24 +72,4 @@ final class PhotoGalleryModel {
         }
         return index
     }
-}
-
-struct Model: Decodable {
-    let response: Response
-}
-
-struct Response: Decodable {
-    let count: Int
-    let items: [Items]
-}
-
-struct Items: Decodable {
-    let date: Int
-    let sizes: [Sizes]
-}
-
-struct Sizes: Decodable {
-    let height: Int
-    let url: URL
-    let width: Int
 }

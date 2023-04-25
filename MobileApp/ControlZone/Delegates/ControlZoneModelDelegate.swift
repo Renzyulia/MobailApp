@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol RootModelDelegate: AnyObject {
+protocol ControlZoneModelDelegate: AnyObject {
     func showAuthorization()
     func showUserProfile(token: String)
 }

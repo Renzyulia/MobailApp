@@ -12,15 +12,16 @@ final class PhotoView: UIView {
     let previewCollectionDataSource: UICollectionViewDataSource
     let previewCollectionDelegate: UICollectionViewDelegate
     let reuseIdentifier: String
-//    let photoUrl: URL
+    let photoUrl: URL
     
     private let photoView = UIImageView()
     private var previewCollectionView: UICollectionView!
     
-    init(previewCollectionDataSource: UICollectionViewDataSource, previewCollectionDelegate: UICollectionViewDelegate, reuseIdentifier: String) {
+    init(previewCollectionDataSource: UICollectionViewDataSource, previewCollectionDelegate: UICollectionViewDelegate, reuseIdentifier: String, photoUrl: URL) {
         self.previewCollectionDataSource = previewCollectionDataSource
         self.previewCollectionDelegate = previewCollectionDelegate
         self.reuseIdentifier = reuseIdentifier
+        self.photoUrl = photoUrl
         super.init(frame: .zero)
         
         backgroundColor = .white
@@ -58,8 +59,8 @@ final class PhotoView: UIView {
     }
     
     private func configurePhotoView() {
-//        photoView.loadImage(with: url)
-        photoView.backgroundColor = .darkGray
+        photoView.loadImage(with: photoUrl)
+        photoView.backgroundColor = .white
         photoView.contentMode = .scaleAspectFit
         photoView.clipsToBounds = true
         

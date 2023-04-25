@@ -7,8 +7,8 @@
 
 import UIKit
 
-final class RootModel {
-    weak var delegate: RootModelDelegate?
+final class ControlZoneModel {
+    weak var delegate: ControlZoneModelDelegate?
     
     func viewDidLoad() {
         if let token = TokenStorage.shared.getToken() {

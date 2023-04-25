@@ -7,8 +7,8 @@
 
 import UIKit
 
-class ViewController: UIViewController, RootModelDelegate, AuthorizationViewControllerDelegate, PhotoGalleryViewControllerDelegate {
-    private var rootModel: RootModel? = nil
+class ControlZoneViewController: UIViewController, ControlZoneModelDelegate, AuthorizationViewControllerDelegate, PhotoGalleryViewControllerDelegate {
+    private var controlZoneModel: ControlZoneModel? = nil
     private var authorizationViewController: AuthorizationViewController? = nil
     private var photoGalleryViewController: PhotoGalleryViewController? = nil
     private var navigationPhotoGalleryViewController: UINavigationController? = nil
@@ -16,12 +16,12 @@ class ViewController: UIViewController, RootModelDelegate, AuthorizationViewCont
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let rootModel = RootModel()
-        self.rootModel = rootModel
+        let controlZoneModel = ControlZoneModel()
+        self.controlZoneModel = controlZoneModel
         
-        rootModel.delegate = self
+        controlZoneModel.delegate = self
         
-        rootModel.viewDidLoad()
+        controlZoneModel.viewDidLoad()
     }
     
     func showAuthorization() {
@@ -45,12 +45,12 @@ class ViewController: UIViewController, RootModelDelegate, AuthorizationViewCont
     
     func userDidAuthorizeSuccessfully() {
         authorizationViewController?.remove()
-        rootModel?.userDidAuthorizeSuccessfully()
+        controlZoneModel?.userDidAuthorizeSuccessfully()
     }
     
     func didTapExit() {
         navigationPhotoGalleryViewController?.remove()
-        rootModel?.didTapExit()
+        controlZoneModel?.didTapExit()
     }
 }
 

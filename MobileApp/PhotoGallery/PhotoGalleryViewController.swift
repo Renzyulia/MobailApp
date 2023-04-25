@@ -56,7 +56,11 @@ final class PhotoGalleryViewController: UIViewController, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let photoViewController = PhotoViewController()
+        photoGalleryModel?.didSelectItem(indexPath.item)
+    }
+    
+    func showPhoto(item: Int) {
+        let photoViewController = PhotoViewController(token: token, item: item)
         self.photoViewController = photoViewController
         photoViewController.delegate = self
         
