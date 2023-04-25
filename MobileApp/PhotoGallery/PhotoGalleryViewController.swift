@@ -7,13 +7,14 @@
 
 import UIKit
 
-final class PhotoGalleryViewController: UIViewController, UICollectionViewDelegate, PhotoGalleryModelDelegate {
+final class PhotoGalleryViewController: UIViewController, UICollectionViewDelegate, PhotoGalleryModelDelegate, PhotoViewControllerDelegate {
     let token: String
     weak var delegate: PhotoGalleryViewControllerDelegate?
     
     private var dataSource: DataSource? = nil
     private var collectionView: UICollectionView!
     private var photoGalleryModel: PhotoGalleryModel? = nil
+    private var photoViewController: PhotoViewController? = nil
     
     init(token: String) {
         self.token = token
@@ -54,6 +55,14 @@ final class PhotoGalleryViewController: UIViewController, UICollectionViewDelega
         view.addSubview(collectionView)
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let photoViewController = PhotoViewController()
+        self.photoViewController = photoViewController
+        photoViewController.delegate = self
+        
+        navigationController?.pushViewController(photoViewController, animated: false)
+    }
+    
     func dismiss() {
         delegate?.didTapExit()
     }
@@ -64,6 +73,8 @@ final class PhotoGalleryViewController: UIViewController, UICollectionViewDelega
         let exitButton = UIBarButtonItem(title: "Выход", style: .plain, target: self, action: #selector(didTapExit))
         exitButton.tintColor = .black
         navigationItem.rightBarButtonItem = exitButton
+        
+        navigationItem.backButtonDisplayMode = .minimal
     }
     
     @objc private func didTapExit() {

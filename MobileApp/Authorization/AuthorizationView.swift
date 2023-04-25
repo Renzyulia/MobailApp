@@ -24,7 +24,7 @@ final class AuthorizationView: UIView {
     }
     
     private func configureTextLabel() {
-        textLabel.text = "Mobile Up Gallery"
+        textLabel.text = "Mobile Up" + "\n" + "Gallery"
         textLabel.textColor = .black
         textLabel.textAlignment = .left
         textLabel.font = .systemFont(ofSize: 48, weight: .bold)
@@ -36,7 +36,7 @@ final class AuthorizationView: UIView {
         NSLayoutConstraint.activate([
             textLabel.topAnchor.constraint(equalTo: topAnchor, constant: 170),
             textLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 24),
-            textLabel.rightAnchor.constraint(lessThanOrEqualTo: rightAnchor, constant: -50)
+            textLabel.rightAnchor.constraint(lessThanOrEqualTo: rightAnchor)
         ])
     }
     
