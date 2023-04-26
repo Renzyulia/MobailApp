@@ -10,4 +10,5 @@ import UIKit
 protocol OAuthModelDelegate: AnyObject {
     func showPage(at: URL)
     func dismissWith(result: Result)
+    func dismiss()
 }

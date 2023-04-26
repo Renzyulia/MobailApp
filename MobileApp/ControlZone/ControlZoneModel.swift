@@ -24,7 +24,8 @@ final class ControlZoneModel {
         if let token = TokenStorage.shared.getToken() {
             delegate?.showUserProfile(token: token)
         } else {
-            print("error")
+            delegate?.showAuthorization()
+            assertionFailure("Token is missing")
         }
     }
     

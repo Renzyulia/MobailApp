@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class DataSource: NSObject, UICollectionViewDataSource {
+final class PhotoGalleryDataSource: NSObject, UICollectionViewDataSource {
     let photoGalleryModel: PhotoGalleryModel
     let reuseIdentifier = "Cell"
     

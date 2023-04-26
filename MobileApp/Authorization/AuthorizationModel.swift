@@ -13,4 +13,8 @@ final class AuthorizationModel {
     func didTapLogin() {
         delegate?.openOAuthView()
     }
+    
+    func didAuthorizeError() {
+        delegate?.showAuthorizeError()
+    }
 }

@@ -10,4 +10,5 @@ import UIKit
 protocol OAuthViewControllerDelagate: AnyObject {
     func userDidAuthorizeSuccessfully()
     func didAuthorizeError()
+    func userDidCancel()
 }

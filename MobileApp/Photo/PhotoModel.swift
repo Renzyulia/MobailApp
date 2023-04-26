@@ -45,25 +45,26 @@ final class PhotoModel {
         
         URLSession.shared.dataTask(with: request, completionHandler: { [weak self] data, response, error -> Void in
             do {
+                guard let data = data else { return }
                 let jsonDecoder = JSONDecoder()
-                let responseModel = try jsonDecoder.decode(Model.self, from: data!)
+                let responseModel = try jsonDecoder.decode(Model.self, from: data)
                 
                 DispatchQueue.main.async {
-                    self!.countPhotos = responseModel.response.count
+                    self?.countPhotos = responseModel.response.count
                     
                     let date = NSDate(timeIntervalSince1970: TimeInterval(responseModel.response.items[item].date)) as Date
                     
-                    self!.datePhoto = date.transform()
+                    self?.datePhoto = date.transform()
                     
                     let index = self!.findTheLargestSize(responseModel.response.items[item].sizes)
-                    self!.urlPhoto = responseModel.response.items[item].sizes[index].url
+                    self?.urlPhoto = responseModel.response.items[item].sizes[index].url
 
-                    self!.delegate?.showPhotoView()
+                    self?.delegate?.showPhotoView()
                 }
             } catch {
-                print("JSON Serialization error")
-                print(error)
-                self!.delegate?.showLoadingPhotoError()
+                DispatchQueue.main.async {
+                    self?.delegate?.showLoadingPhotoError()
+                }
             }
         }).resume()
     }

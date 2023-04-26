@@ -42,18 +42,19 @@ final class OAuthViewController: UIViewController, OAuthModelDelegate, WKNavigat
         webView.load(URLRequest(url: url))
     }
     
-    func webView(_ webView: WKWebView, didReceiveServerRedirectForProvisionalNavigation navigation: WKNavigation!) {
-        if ((webView.url?.absoluteString.range(of: "access_token")) != nil) {
-            oAuthModel?.didReceiveRedirectUrl(webView.url!)
-        } else {
-            print("error!")
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+            guard let url = webView.url else { return }
+            oAuthModel?.didReceiveRedirectUrl(url)
         }
-    }
     
     func dismissWith(result: Result) {
         switch result {
         case .success: delegate?.userDidAuthorizeSuccessfully() 
         case .error: delegate?.didAuthorizeError()
         }
+    }
+    
+    func dismiss() {
+        delegate?.userDidCancel()
     }
 }

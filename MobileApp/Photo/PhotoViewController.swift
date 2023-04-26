@@ -46,7 +46,7 @@ final class PhotoViewController: UIViewController, UICollectionViewDelegate, Pho
     }
     
     func showLoadingPhotoError() {
-        let alert = UIAlertController(title: nil, message: "Ошибка загрузки фотографий", preferredStyle: .alert)
+        let alert = UIAlertController(title: nil, message: "Ошибка загрузки фотографии", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default))
         present(alert, animated: true)
     }
@@ -61,14 +61,10 @@ final class PhotoViewController: UIViewController, UICollectionViewDelegate, Pho
         activityViewController.completionWithItemsHandler = { [weak self] (activityType: UIActivity.ActivityType?, completed:
         Bool, arrayReturnedItems: [Any]?, error: Error?) in
             if completed {
-                self!.photoModel?.photoSavedSuccessfully()
+                self?.photoModel?.photoSavedSuccessfully()
                 return
-            } else {
-                print("cancel")
-            }
-            if let shareError = error {
-                print("error while sharing: \(shareError.localizedDescription)")
-                self!.photoModel?.photoSavingError()
+            } else if error != nil {
+                self?.photoModel?.photoSavingError()
             }
         }
         present(activityViewController, animated: true)

@@ -12,6 +12,8 @@ final class PhotoGalleryCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
+        configureSubviews()
     }
     
     required init?(coder: NSCoder) {
@@ -22,6 +24,11 @@ final class PhotoGalleryCell: UICollectionViewCell {
     
     func configurePhotoGalleryCell(url: URL) {
         imageView.loadImage(with: url)
+    }
+    
+    // MARK: - Private methods
+    
+    private func configureSubviews() {
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         

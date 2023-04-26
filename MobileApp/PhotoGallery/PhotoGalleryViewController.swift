@@ -11,7 +11,7 @@ final class PhotoGalleryViewController: UIViewController, UICollectionViewDelega
     let token: String
     weak var delegate: PhotoGalleryViewControllerDelegate?
     
-    private var dataSource: DataSource? = nil
+    private var photoGalleryDataSource: PhotoGalleryDataSource? = nil
     private var collectionView: UICollectionView!
     private var photoGalleryModel: PhotoGalleryModel? = nil
     private var photoViewController: PhotoViewController? = nil
@@ -40,8 +40,8 @@ final class PhotoGalleryViewController: UIViewController, UICollectionViewDelega
     }
     
     func showPhotoGalleryView() {
-        let dataSource = DataSource(photoGalleryModel: photoGalleryModel!)
-        self.dataSource = dataSource
+        let photoGalleryDataSource = PhotoGalleryDataSource(photoGalleryModel: photoGalleryModel!)
+        self.photoGalleryDataSource = photoGalleryDataSource
         
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
@@ -51,16 +51,10 @@ final class PhotoGalleryViewController: UIViewController, UICollectionViewDelega
 
         collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
         collectionView.delegate = self
-        collectionView.dataSource = dataSource
-        collectionView.register(PhotoGalleryCell.self, forCellWithReuseIdentifier: dataSource.reuseIdentifier)
+        collectionView.dataSource = photoGalleryDataSource
+        collectionView.register(PhotoGalleryCell.self, forCellWithReuseIdentifier: photoGalleryDataSource.reuseIdentifier)
         
         view.addSubview(collectionView)
-    }
-    
-    func showLoadingPhotoError() {
-        let alert = UIAlertController(title: nil, message: "Ошибка загрузки фотографий", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default))
-        present(alert, animated: true)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -72,6 +66,12 @@ final class PhotoGalleryViewController: UIViewController, UICollectionViewDelega
         self.photoViewController = photoViewController
         
         navigationController?.pushViewController(photoViewController, animated: false)
+    }
+    
+    func showLoadingError() {
+        let alert = UIAlertController(title: nil, message: "Ошибка загрузки фотографий", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        present(alert, animated: true)
     }
     
     func dismiss() {

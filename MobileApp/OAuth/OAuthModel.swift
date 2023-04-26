@@ -7,6 +7,11 @@
 
 import UIKit
 
+enum Result {
+    case success
+    case error
+}
+
 final class OAuthModel {
     weak var delegate: OAuthModelDelegate?
     
@@ -19,28 +24,20 @@ final class OAuthModel {
     }
     
     func didReceiveRedirectUrl(_ url: URL) {
-        let components = URLComponents(url: url, resolvingAgainstBaseURL: false)
-        if let queryItems = components?.queryItems {
-            for queryItem in queryItems {
-                if queryItem.name == "authorize_url" {
-                    guard queryItem.value != nil else { return }
-                    if let url = URL(string: queryItem.value!.removingPercentEncoding!) {
-                        let component = URLComponents(url: url, resolvingAgainstBaseURL: false)
-                        if let fragment = component?.fragment {
-                            let token = String(fragment.dropFirst(13))
-                            TokenStorage.shared.save(token: token)
-                            delegate?.dismissWith(result: .success)
-                        }
-                    }
-                } else {
-                    delegate?.dismissWith(result: .error)
-                }
+        guard let decodedStringUrl = url.absoluteString.removingPercentEncoding else { return }
+        if decodedStringUrl.range(of: "error=") != nil {
+            if decodedStringUrl.range(of: "error_reason=user_denied") != nil {
+                delegate?.dismiss()
+            } else {
+                delegate?.dismissWith(result: .error)
             }
+        } else {
+            guard let prefixRange = decodedStringUrl.range(of: "#access_token=") else { return }
+            let tokenFirstIndex = prefixRange.upperBound
+            guard tokenFirstIndex < decodedStringUrl.endIndex else { return }
+            let token = String(decodedStringUrl[tokenFirstIndex...])
+            TokenStorage.shared.save(token: token)
+            delegate?.dismissWith(result: .success)
         }
     }
-}
-
-enum Result {
-    case success
-    case error
 }

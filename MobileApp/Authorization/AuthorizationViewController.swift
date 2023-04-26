@@ -57,6 +57,16 @@ final class AuthorizationViewController: UIViewController, AuthorizationViewDele
     
     func didAuthorizeError() {
         oauthViewController?.remove()
-        print("cancel!")
+        authorizationModel?.didAuthorizeError()
+    }
+    
+    func showAuthorizeError() {
+        let alert = UIAlertController(title: nil, message: "Ошибка авторизации", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        present(alert, animated: true)
+    }
+    
+    func userDidCancel() {
+        oauthViewController?.remove()
     }
 }

@@ -9,4 +9,5 @@ import UIKit
 
 protocol AuthorizationModelDelegate: AnyObject {
     func openOAuthView()
+    func showAuthorizeError()
 }

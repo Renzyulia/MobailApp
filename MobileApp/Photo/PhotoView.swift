@@ -12,8 +12,8 @@ final class PhotoView: UIView {
     let previewCollectionDelegate: UICollectionViewDelegate
     let reuseIdentifier: String
     let photoUrl: URL
-
     let photoView = UIImageView()
+    
     private var previewCollectionView: UICollectionView!
     
     init(previewCollectionDataSource: UICollectionViewDataSource, previewCollectionDelegate: UICollectionViewDelegate, reuseIdentifier: String, photoUrl: URL) {

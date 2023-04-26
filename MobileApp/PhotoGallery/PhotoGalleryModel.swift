@@ -41,23 +41,24 @@ final class PhotoGalleryModel {
         
         URLSession.shared.dataTask(with: request, completionHandler: { [weak self] data, response, error -> Void in
             do {
+                guard let data = data else { return }
                 let jsonDecoder = JSONDecoder()
-                let responseModel = try jsonDecoder.decode(Model.self, from: data!)
+                let responseModel = try jsonDecoder.decode(Model.self, from: data)
                 
                 DispatchQueue.main.async {
-                    self!.countPhotos = responseModel.response.count
+                    self?.countPhotos = responseModel.response.count
                     
                     for item in responseModel.response.items {
                         let index = self?.findSize(forViewWithWidth: forViewWithWidth, sizes: item.sizes)
                         guard index != nil else { return }
-                        self!.url.append(item.sizes[index!].url)
+                        self?.url.append(item.sizes[index!].url)
                     }
-                    self!.delegate?.showPhotoGalleryView()
+                    self?.delegate?.showPhotoGalleryView()
                 }
             } catch {
-                print("JSON Serialization error")
-                print(error)
-                self!.delegate?.showLoadingPhotoError()
+                DispatchQueue.main.async {
+                    self?.delegate?.showLoadingError()
+                }
             }
         }).resume()
     }

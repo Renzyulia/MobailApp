@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ControlZoneViewController: UIViewController, ControlZoneModelDelegate, AuthorizationViewControllerDelegate, PhotoGalleryViewControllerDelegate {
+final class ControlZoneViewController: UIViewController, ControlZoneModelDelegate, AuthorizationViewControllerDelegate, PhotoGalleryViewControllerDelegate {
     private var controlZoneModel: ControlZoneModel? = nil
     private var authorizationViewController: AuthorizationViewController? = nil
     private var photoGalleryViewController: PhotoGalleryViewController? = nil
