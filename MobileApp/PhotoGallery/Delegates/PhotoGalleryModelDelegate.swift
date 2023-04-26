@@ -9,6 +9,7 @@ import UIKit
 
 protocol PhotoGalleryModelDelegate: AnyObject {
     func showPhotoGalleryView()
+    func showLoadingPhotoError()
     func showPhoto(item: Int)
     func dismiss() 
 }

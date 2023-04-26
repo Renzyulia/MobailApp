@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class PhotoGalleryViewController: UIViewController, UICollectionViewDelegate, PhotoGalleryModelDelegate, PhotoViewControllerDelegate {
+final class PhotoGalleryViewController: UIViewController, UICollectionViewDelegate, PhotoGalleryModelDelegate {
     let token: String
     weak var delegate: PhotoGalleryViewControllerDelegate?
     
@@ -24,6 +24,8 @@ final class PhotoGalleryViewController: UIViewController, UICollectionViewDelega
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    // MARK: - Public methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,6 +57,12 @@ final class PhotoGalleryViewController: UIViewController, UICollectionViewDelega
         view.addSubview(collectionView)
     }
     
+    func showLoadingPhotoError() {
+        let alert = UIAlertController(title: nil, message: "Ошибка загрузки фотографий", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        present(alert, animated: true)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         photoGalleryModel?.didSelectItem(indexPath.item)
     }
@@ -62,7 +70,6 @@ final class PhotoGalleryViewController: UIViewController, UICollectionViewDelega
     func showPhoto(item: Int) {
         let photoViewController = PhotoViewController(token: token, item: item)
         self.photoViewController = photoViewController
-        photoViewController.delegate = self
         
         navigationController?.pushViewController(photoViewController, animated: false)
     }
@@ -70,6 +77,8 @@ final class PhotoGalleryViewController: UIViewController, UICollectionViewDelega
     func dismiss() {
         delegate?.didTapExit()
     }
+    
+    // MARK: - Private methods
     
     private func configureNavigationBar() {
         navigationItem.title = "MobileUp Gallery"

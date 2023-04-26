@@ -12,6 +12,8 @@ final class OAuthModel {
     
     private let urlRequest = URL(string: "https://oauth.vk.com/authorize?client_id=51622196&display=page&redirect_uri=https://oauth.vk.com/blank.html&scope=4&response_type=token&v=5.131")
     
+    // MARK: - Public methods
+    
     func viewDidLoad() {
         delegate?.showPage(at: urlRequest!)
     }

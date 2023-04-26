@@ -19,9 +19,25 @@ final class PhotoModel {
         self.token = token
     }
     
+    // MARK: - Public methods
+    
     func viewDidLoad(for item: Int) {
         getData(item: item)
     }
+    
+    func didTapShareButton() {
+        delegate?.showShareMenu()
+    }
+    
+    func photoSavedSuccessfully() {
+        delegate?.showSuccessfulSaving()
+    }
+    
+    func photoSavingError() {
+        delegate?.showSavingError()
+    }
+    
+    // MARK: - Private methods
     
     private func getData(item: Int) {
         let url = "https://api.vk.com/method/photos.get?owner_id=-128666765&album_id=266310117&access_token="
@@ -47,6 +63,7 @@ final class PhotoModel {
             } catch {
                 print("JSON Serialization error")
                 print(error)
+                self!.delegate?.showLoadingPhotoError()
             }
         }).resume()
     }

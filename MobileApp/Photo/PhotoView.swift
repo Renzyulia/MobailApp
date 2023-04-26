@@ -8,13 +8,12 @@
 import UIKit
 
 final class PhotoView: UIView {
-    weak var delegate: PhotoViewDelegate?
     let previewCollectionDataSource: UICollectionViewDataSource
     let previewCollectionDelegate: UICollectionViewDelegate
     let reuseIdentifier: String
     let photoUrl: URL
-    
-    private let photoView = UIImageView()
+
+    let photoView = UIImageView()
     private var previewCollectionView: UICollectionView!
     
     init(previewCollectionDataSource: UICollectionViewDataSource, previewCollectionDelegate: UICollectionViewDelegate, reuseIdentifier: String, photoUrl: URL) {
@@ -34,21 +33,22 @@ final class PhotoView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Private methods
+    
     private func configurePreviewCollectionView() {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         layout.itemSize = CGSize(width: 60, height: 60)
-//        layout.minimumInteritemSpacing = 1
         layout.minimumLineSpacing = 1
 
         previewCollectionView = UICollectionView(frame: self.frame, collectionViewLayout: layout)
         previewCollectionView.delegate = previewCollectionDelegate
         previewCollectionView.dataSource = previewCollectionDataSource
         previewCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-        
+
         addSubview(previewCollectionView)
-        
+
         previewCollectionView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             previewCollectionView.heightAnchor.constraint(equalToConstant: 60),

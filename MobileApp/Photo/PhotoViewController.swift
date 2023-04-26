@@ -7,12 +7,11 @@
 
 import UIKit
 
-final class PhotoViewController: UIViewController, UICollectionViewDelegate, PhotoModelDelegate, PhotoViewDelegate {
-    weak var delegate: PhotoViewControllerDelegate?
-    
+final class PhotoViewController: UIViewController, UICollectionViewDelegate, PhotoModelDelegate {
     private let token: String
     private let item: Int
     private var photoModel: PhotoModel? = nil
+    private var photoView: PhotoView? = nil
     private var previewCollectionDataSource: PreviewCollectionDataSource? = nil
     
     init(token: String, item: Int) {
@@ -24,6 +23,8 @@ final class PhotoViewController: UIViewController, UICollectionViewDelegate, Pho
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    // MARK: - Public methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,18 +45,61 @@ final class PhotoViewController: UIViewController, UICollectionViewDelegate, Pho
         configurePhotoView(url: url)
     }
     
+    func showLoadingPhotoError() {
+        let alert = UIAlertController(title: nil, message: "Ошибка загрузки фотографий", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        present(alert, animated: true)
+    }
+    
+    func showShareMenu() {
+        let items:[Any] = [photoView!.photoView.image!]
+        
+        let activityViewController = UIActivityViewController(activityItems: items, applicationActivities: nil)
+        
+        activityViewController.excludedActivityTypes = [.assignToContact, .airDrop, .addToReadingList, .print, .copyToPasteboard]
+        
+        activityViewController.completionWithItemsHandler = { [weak self] (activityType: UIActivity.ActivityType?, completed:
+        Bool, arrayReturnedItems: [Any]?, error: Error?) in
+            if completed {
+                self!.photoModel?.photoSavedSuccessfully()
+                return
+            } else {
+                print("cancel")
+            }
+            if let shareError = error {
+                print("error while sharing: \(shareError.localizedDescription)")
+                self!.photoModel?.photoSavingError()
+            }
+        }
+        present(activityViewController, animated: true)
+    }
+    
+    func showSuccessfulSaving() {
+        let alert = UIAlertController(title: nil, message: "Фотография загружена", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        present(alert, animated: true)
+    }
+    
+    func showSavingError() {
+        let alert = UIAlertController(title: nil, message: "Ошибка загрузки фотографии", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        present(alert, animated: true)
+    }
+    
+    // MARK: - Private methods
+    
     private func configureNavigationBar(date: String) {
         navigationItem.title = "\(date)"
         
-        let exitButton = UIBarButtonItem(image: UIImage(named: "SaveIcon"), style: .plain, target: self, action: #selector(didTapExit))
-        exitButton.tintColor = .black
-        navigationItem.rightBarButtonItem = exitButton
+        let shareButton = UIBarButtonItem(image: UIImage(named: "SaveIcon"), style: .plain, target: self, action: #selector(didTapShareButton))
+        shareButton.tintColor = .black
+        navigationItem.rightBarButtonItem = shareButton
         
         navigationController?.navigationBar.tintColor = .black
     }
     
-    @objc private func didTapExit() {
-        print("tapped left button")
+    @objc private func didTapShareButton() {
+        photoModel?.didTapShareButton()
     }
     
     private func configurePhotoView(url: URL) {
@@ -64,7 +108,7 @@ final class PhotoViewController: UIViewController, UICollectionViewDelegate, Pho
                                   reuseIdentifier: previewCollectionDataSource!.reuseIdentifier,
                                   photoUrl: url)
         
-        photoView.delegate = self
+        self.photoView = photoView
         
         view.addSubview(photoView)
         

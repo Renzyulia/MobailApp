@@ -14,6 +14,8 @@ final class OAuthViewController: UIViewController, OAuthModelDelegate, WKNavigat
     private let webView = WKWebView()
     private var oAuthModel: OAuthModel? = nil
     
+    // MARK: - Public methods
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,7 +46,7 @@ final class OAuthViewController: UIViewController, OAuthModelDelegate, WKNavigat
         if ((webView.url?.absoluteString.range(of: "access_token")) != nil) {
             oAuthModel?.didReceiveRedirectUrl(webView.url!)
         } else {
-            print("error")
+            print("error!")
         }
     }
     

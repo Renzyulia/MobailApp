@@ -38,11 +38,9 @@
 		A3B71E3D29F59ECE008ED556 /* PhotoGalleryViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B71E3C29F59ECE008ED556 /* PhotoGalleryViewControllerDelegate.swift */; };
 		A3F746DB29F7CE8700732286 /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F746DA29F7CE8700732286 /* PhotoView.swift */; };
 		A3F746DD29F7CEB700732286 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F746DC29F7CEB700732286 /* PhotoViewController.swift */; };
-		A3F746DF29F7D0BA00732286 /* PhotoViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F746DE29F7D0BA00732286 /* PhotoViewDelegate.swift */; };
 		A3F746E129F7D8C500732286 /* PreviewCollectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F746E029F7D8C500732286 /* PreviewCollectionDataSource.swift */; };
 		A3F746E329F7DD2200732286 /* PhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F746E229F7DD2200732286 /* PhotoModel.swift */; };
 		A3F746E529F7DDDF00732286 /* PhotoModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F746E429F7DDDF00732286 /* PhotoModelDelegate.swift */; };
-		A3F746E729F7E17F00732286 /* PhotoViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F746E629F7E17F00732286 /* PhotoViewControllerDelegate.swift */; };
 		A3F746F029F8093200732286 /* ResponseStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F746EF29F8093200732286 /* ResponseStructure.swift */; };
 		A3F746F629F84E4600732286 /* Date+transformFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F746F529F84E4600732286 /* Date+transformFunction.swift */; };
 /* End PBXBuildFile section */
@@ -81,11 +79,9 @@
 		A3B71E3C29F59ECE008ED556 /* PhotoGalleryViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGalleryViewControllerDelegate.swift; sourceTree = "<group>"; };
 		A3F746DA29F7CE8700732286 /* PhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoView.swift; sourceTree = "<group>"; };
 		A3F746DC29F7CEB700732286 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
-		A3F746DE29F7D0BA00732286 /* PhotoViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewDelegate.swift; sourceTree = "<group>"; };
 		A3F746E029F7D8C500732286 /* PreviewCollectionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewCollectionDataSource.swift; sourceTree = "<group>"; };
 		A3F746E229F7DD2200732286 /* PhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoModel.swift; sourceTree = "<group>"; };
 		A3F746E429F7DDDF00732286 /* PhotoModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoModelDelegate.swift; sourceTree = "<group>"; };
-		A3F746E629F7E17F00732286 /* PhotoViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewControllerDelegate.swift; sourceTree = "<group>"; };
 		A3F746EF29F8093200732286 /* ResponseStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseStructure.swift; sourceTree = "<group>"; };
 		A3F746F529F84E4600732286 /* Date+transformFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+transformFunction.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -230,13 +226,11 @@
 		A3F746D929F7CE5D00732286 /* Photo */ = {
 			isa = PBXGroup;
 			children = (
+				A3F746F729F8519E00732286 /* Delegates */,
 				A3F746DA29F7CE8700732286 /* PhotoView.swift */,
 				A3F746DC29F7CEB700732286 /* PhotoViewController.swift */,
-				A3F746DE29F7D0BA00732286 /* PhotoViewDelegate.swift */,
-				A3F746E029F7D8C500732286 /* PreviewCollectionDataSource.swift */,
 				A3F746E229F7DD2200732286 /* PhotoModel.swift */,
-				A3F746E429F7DDDF00732286 /* PhotoModelDelegate.swift */,
-				A3F746E629F7E17F00732286 /* PhotoViewControllerDelegate.swift */,
+				A3F746E029F7D8C500732286 /* PreviewCollectionDataSource.swift */,
 			);
 			path = Photo;
 			sourceTree = "<group>";
@@ -255,6 +249,14 @@
 			isa = PBXGroup;
 			children = (
 				A3B71E0D29F51D40008ED556 /* ControlZoneModelDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		A3F746F729F8519E00732286 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				A3F746E429F7DDDF00732286 /* PhotoModelDelegate.swift */,
 			);
 			path = Delegates;
 			sourceTree = "<group>";
@@ -338,10 +340,8 @@
 				A39612ED29F4601A0073A3F6 /* AuthorizationModel.swift in Sources */,
 				A3B71E1729F55C55008ED556 /* PhotoGalleryViewController.swift in Sources */,
 				A3B71E3D29F59ECE008ED556 /* PhotoGalleryViewControllerDelegate.swift in Sources */,
-				A3F746DF29F7D0BA00732286 /* PhotoViewDelegate.swift in Sources */,
 				A3B71E3B29F59D54008ED556 /* PhotoGalleryModelDelegate.swift in Sources */,
 				A3F746E529F7DDDF00732286 /* PhotoModelDelegate.swift in Sources */,
-				A3F746E729F7E17F00732286 /* PhotoViewControllerDelegate.swift in Sources */,
 				A32A938129F6769C0073C332 /* UIImageView+loadImage.swift in Sources */,
 				A39612F129F46BE20073A3F6 /* OAuthViewControllerDelegate.swift in Sources */,
 				A3840BC329F2AD0C004B77D3 /* ControlZoneViewController.swift in Sources */,

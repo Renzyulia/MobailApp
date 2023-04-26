@@ -14,6 +14,8 @@ final class AuthorizationViewController: UIViewController, AuthorizationViewDele
     private var authorizationModel: AuthorizationModel? = nil
     private var oauthViewController: OAuthViewController? = nil
     
+    // MARK: - Public methods
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -55,6 +57,6 @@ final class AuthorizationViewController: UIViewController, AuthorizationViewDele
     
     func didAuthorizeError() {
         oauthViewController?.remove()
-        //показать алерт с ошибкой
+        print("cancel!")
     }
 }

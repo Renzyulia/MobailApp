@@ -18,6 +18,8 @@ final class PhotoGalleryCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Public methods
+    
     func configurePhotoGalleryCell(url: URL) {
         imageView.loadImage(with: url)
         imageView.contentMode = .scaleAspectFill

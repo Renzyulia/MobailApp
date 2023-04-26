@@ -12,8 +12,7 @@ extension Date {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = DateFormatter.Style.long
         dateFormatter.timeZone = .current
-        let localDate = dateFormatter.string(from: self)
         
-        return localDate
+        return dateFormatter.string(from: self)
     }
 }

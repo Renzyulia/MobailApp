@@ -10,6 +10,8 @@ import UIKit
 final class ControlZoneModel {
     weak var delegate: ControlZoneModelDelegate?
     
+    // MARK: - Public methods
+    
     func viewDidLoad() {
         if let token = TokenStorage.shared.getToken() {
             delegate?.showUserProfile(token: token)

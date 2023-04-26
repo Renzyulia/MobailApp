@@ -13,6 +13,8 @@ class ControlZoneViewController: UIViewController, ControlZoneModelDelegate, Aut
     private var photoGalleryViewController: PhotoGalleryViewController? = nil
     private var navigationPhotoGalleryViewController: UINavigationController? = nil
 
+    // MARK: - Public methods
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -53,4 +55,3 @@ class ControlZoneViewController: UIViewController, ControlZoneModelDelegate, Aut
         controlZoneModel?.didTapExit()
     }
 }
-

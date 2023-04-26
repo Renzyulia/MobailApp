@@ -23,6 +23,8 @@ final class AuthorizationView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Private methods
+    
     private func configureTextLabel() {
         textLabel.text = "Mobile Up" + "\n" + "Gallery"
         textLabel.textColor = .black
@@ -70,6 +72,8 @@ final class LoginButton: UIControl {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    // MARK: - Private methods
     
     private func configureLoginButton() {
         backgroundColor = .black

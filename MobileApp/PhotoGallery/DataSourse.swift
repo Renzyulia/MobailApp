@@ -15,6 +15,8 @@ final class DataSource: NSObject, UICollectionViewDataSource {
         self.photoGalleryModel = photoGalleryModel
     }
     
+    // MARK: - Public methods
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return photoGalleryModel.countPhotos
     }

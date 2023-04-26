@@ -9,4 +9,8 @@ import UIKit
 
 protocol PhotoModelDelegate: AnyObject {
     func showPhotoView()
+    func showLoadingPhotoError()
+    func showShareMenu()
+    func showSuccessfulSaving()
+    func showSavingError()
 }
